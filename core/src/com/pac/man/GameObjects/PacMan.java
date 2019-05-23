@@ -1,8 +1,9 @@
-package com.pac.man;
+package com.pac.man.GameObjects;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
+import com.pac.man.Moveable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +11,17 @@ import java.util.List;
 public class PacMan extends Moveable {
 
     boolean powered;
+
+    private List<Animation> animations;
+    private Animation currentAnimation;
     float stateTime = 0f;
-    private List<Animation<TextureRegion>> animations;
-    private Animation<TextureRegion> currentAnimation;
 
     public PacMan(int x, int y) {
         super(x, y);
 
-        animations = new ArrayList<Animation<TextureRegion>>(5);
-        TextureRegion[][] tmp = TextureRegion.split(new Texture("sprites.jpg"),16,16);
+        dir = State.UP;
+
+        animations = new ArrayList<Animation>(5);
 
         TextureRegion[] frames;
         for (int i = 0; i < 4; i++) {
@@ -44,8 +47,7 @@ public class PacMan extends Moveable {
         batch.draw(currentFrame, x, y, currentFrame.getRegionWidth()*2,currentFrame.getRegionHeight()*2);
     }
 
-    @Override
-    public void update() {
+    public void update(float delta) {
         super.update();
     }
 

@@ -1,4 +1,6 @@
-package com.pac.man;
+package com.pac.man.GameObjects;
+
+import com.pac.man.GameObject;
 
 public class Edible extends GameObject {
 

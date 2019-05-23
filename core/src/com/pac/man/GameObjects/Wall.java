@@ -1,8 +1,9 @@
-package com.pac.man;
+package com.pac.man.GameObjects;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.pac.man.GameObject;
+import com.pac.man.Main;
 
 import java.io.*;
 import java.util.List;
@@ -50,7 +51,7 @@ public class Wall{
 
         Texture img = new Texture("level.jpg");
         int w = img.getWidth();
-        batch.draw(img, Globals.WIDTH - (w * 2), 0, w * 2,img.getHeight() * 2);
+        batch.draw(img, Main.WIDTH - (w * 2), 0, w * 2,img.getHeight() * 2);
     }
 
     public boolean hitTest(int x, int y) {
